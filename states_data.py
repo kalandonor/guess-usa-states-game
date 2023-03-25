@@ -14,8 +14,4 @@ class StatesData:
         return []
 
     def get_missed_states(self, guessed_states):
-        missed_states = []
-        for state in self.all_states:
-            if state in guessed_states:
-                missed_states.append(state)
-        return missed_states
+        return [state for state in self.all_states if state in guessed_states]
